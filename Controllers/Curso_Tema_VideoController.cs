@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCLaboratorio.Controllers
 {
-    public class Curso_Tema_Videoontroller : Controller
+    public class Curso_Tema_VideoController : Controller
     {
         //
         // GET: /Curso_Tema_Videoontroller/
