@@ -7,8 +7,14 @@
     <title>Pia Desarrollo de Software</title>
 </head>
 <body>
-    <h1>
-    PIA 👍
-    </h1>
+    <center>
+        <h1>
+            PIA 👍
+        </h1>
+    </center>
+    <hr />
+    <center>
+        <a href="/Tema/Index">Temas</a> 
+    </center>
 </body>
 </html>
