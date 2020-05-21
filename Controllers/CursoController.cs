@@ -31,10 +31,8 @@ namespace MVCLaboratorio.Controllers
             //convertir el DataTable a una lista de videos List<Video>
             foreach (DataRow item in dtCurso.Rows)
             {
-                Tema CursoAux = new Tema();
-                CursoAux.IdCurso = int.Parse(item["IdCurso"].ToString());
+                Curso CursoAux = new Curso();
                 CursoAux.Descripcion = item["Descripcion"].ToString();
-                CursoAux.IdEmpleado = int.Parse(item["IdEmpleado"].ToString());
                 lstCurso.Add(CursoAux);
             }
 
