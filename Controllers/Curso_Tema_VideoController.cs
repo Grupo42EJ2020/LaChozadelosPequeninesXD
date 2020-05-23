@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using System.Data.SqlClient;
+using System.Data;
+using MVCLaboratorio.Utilerias;
+using MVCLaboratorio.Models;
+
 namespace MVCLaboratorio.Controllers
 {
     public class Curso_Tema_VideoController : Controller
@@ -15,6 +20,10 @@ namespace MVCLaboratorio.Controllers
         {
             return View();
         }
+
+        
+
+
 
     }
 }
