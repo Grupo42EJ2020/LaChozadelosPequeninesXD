@@ -24,13 +24,13 @@ namespace MVCLaboratorio.Controllers
         {
 
             DataTable dtEmpleado;
-            dtEmpleado = BaseHelper.ejecutarConsulta("sp_Video_ConsultarTodo", CommandType.StoredProcedure);
+            dtEmpleado = BaseHelper.ejecutarConsulta("spEmpleadoConsultarTodo", CommandType.StoredProcedure);
             List<Empleado> lstEmpleado = new List<Empleado>();
 
             foreach (DataRow item in dtEmpleado.Rows)
             {
                 Empleado EmpleadoAux = new Empleado();
-                EmpleadoAux.IdEmpleado = int.Parse(item["IdEmpleado"].ToString());
+                EmpleadoAux.IdEmpleado = Convert.ToInt32(item["IdEmpleado"].ToString()); //int.Parse(item["IdEmpleado"].ToString());
                 EmpleadoAux.Nombre = item["Nombre"].ToString();
                 EmpleadoAux.Direccion = item["Direccion"].ToString();
 
