@@ -66,7 +66,7 @@ namespace MVCLaboratorio.Controllers
                 return View("Error");
             }
         }
-        
+
         [HttpPost]
         public ActionResult CursoDelete(int id, FormCollection datos)
         {
@@ -74,7 +74,7 @@ namespace MVCLaboratorio.Controllers
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@IdCurso", id));
 
-            BaseHelper.ejecutarSentencia("sp_Curso_Eliminar", CommandType.StoredProcedure, parametros);
+            BaseHelper.ejecutarConsulta("sp_Curso_Eliminar", CommandType.StoredProcedure, parametros);
 
             return RedirectToAction("Curso");
         }
@@ -92,7 +92,7 @@ namespace MVCLaboratorio.Controllers
                 infoCurso.IdCurso = int.Parse(dtCurso.Rows[0]["IdCurso"].ToString());
                 infoCurso.Descripcion = dtCurso.Rows[0]["Descripcion"].ToString();
                 infoCurso.IdEmpleado = int.Parse(dtCurso.Rows[0]["IdEmpleado"].ToString());
-                
+
 
                 return View(infoCurso);
             }
@@ -116,7 +116,7 @@ namespace MVCLaboratorio.Controllers
                 infoCurso.IdCurso = int.Parse(dtCurso.Rows[0]["IdCurso"].ToString());
                 infoCurso.Descripcion = dtCurso.Rows[0]["Descripcion"].ToString();
                 infoCurso.IdEmpleado = int.Parse(dtCurso.Rows[0]["IdEmpleado"].ToString());
-                
+
 
                 return View(infoCurso);
             }
@@ -134,11 +134,43 @@ namespace MVCLaboratorio.Controllers
             parametros.Add(new SqlParameter("@IdCurso", id));
             parametros.Add(new SqlParameter("@Descripcion", datosCurso.Descripcion));
             parametros.Add(new SqlParameter("@IdEmpleado", datosCurso.IdEmpleado));
-            
+
 
             BaseHelper.ejecutarConsulta("sp_Curso_Actualizar", CommandType.StoredProcedure, parametros);
 
             return RedirectToAction("Curso");
         }
+
+
+       
+        
+        // En el insert, el IdCurso es autoincrementable y IdEstudiante debe elegirse en base a los 
+        //id que existen en la tabla Estudiante
+        public ActionResult CursoCreate()
+        {
+            return View();
+        }
+   
+          
+        
+        
+        [HttpPost]
+        public ActionResult CursoCreate(Curso datosCurso)
+        {
+
+            
+            // CREATE
+            List<SqlParameter> parametros = new List<SqlParameter>();
+           // parametros.Add(new SqlParameter("@IdCurso", datosCurso.IdCurso));
+            parametros.Add(new SqlParameter("@Descripcion", datosCurso.Descripcion));
+            parametros.Add(new SqlParameter("@IdEmpleado", datosCurso.IdEmpleado));
+
+
+            BaseHelper.ejecutarSentencia("sp_Curso_Insertar", CommandType.StoredProcedure, parametros);
+
+            return RedirectToAction("Curso");
+        }
     }
+
 }
+

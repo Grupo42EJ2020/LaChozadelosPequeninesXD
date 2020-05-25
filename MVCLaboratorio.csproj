@@ -86,6 +86,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Curso\Curso.aspx" />
+    <Content Include="Views\Curso\CursoCreate.aspx" />
     <Content Include="Views\Curso\CursoDelete.aspx" />
     <Content Include="Views\Curso\CursoDetails.aspx" />
     <Content Include="Views\Curso\CursoEdit.aspx" />
@@ -93,8 +94,19 @@
     <Content Include="Views\Curso_Tema\Curso_TemaDelete.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaDetails.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaEdit.aspx" />
+    <Content Include="Views\Empleado\Empleado.aspx" />
+    <Content Include="Views\Empleado\EmpleadoDelete.aspx" />
+    <Content Include="Views\Empleado\EmpleadoDetails.aspx" />
+    <Content Include="Views\Empleado\EmpleadoEdit.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+<<<<<<< HEAD
     <Content Include="Views\Shared\Error.aspx" />
+=======
+    <Content Include="Views\Tema\Create.aspx" />
+    <Content Include="Views\Tema\Delete.aspx" />
+    <Content Include="Views\Tema\Details.aspx" />
+    <Content Include="Views\Tema\Edit.aspx" />
+>>>>>>> 0edd219029b5dcc2631a62d9311f3cfa092764d1
     <Content Include="Views\Tema\Index.aspx" />
     <Content Include="Views\Video\Video.aspx" />
     <Content Include="Web.config">

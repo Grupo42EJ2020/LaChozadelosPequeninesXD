@@ -32,9 +32,25 @@ namespace MVCLaboratorio.Models
             return lstTema;
         }
 
-        Tema ITema.obtenerTema(int IdTema)
+        public Tema obtenerTema(int IdTema)
         {
-            throw new NotImplementedException();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdTema", IdTema));
+            DataTable dtTema = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarPorID", CommandType.StoredProcedure, parametros);
+
+            Tema datosTema = new Tema();
+
+            if (dtTema.Rows.Count > 0) //lo encontro
+            {
+                datosTema.IdTema = int.Parse(dtTema.Rows[0]["IdTema"].ToString());
+                datosTema.Nombre = dtTema.Rows[0]["Nombre"].ToString();
+
+                return datosTema;
+            }
+            else
+            {  //no lo encontro 
+                return null;
+            }
         }
 
         void ITema.insertarTema(Tema datosTema)

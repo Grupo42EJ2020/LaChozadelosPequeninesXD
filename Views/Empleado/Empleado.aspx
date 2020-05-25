@@ -4,21 +4,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Curso</title>
+    <title>Empleado</title>
 </head>
 <body>
      <table>
         <tr>
             <th></th>
             <th>
-                IdCurso
+                IdEmpleado
             </th>
             <th>
-                Descripcion
+                Nombre
             </th>
 
             <th>
-                IdEmpleado
+                Direccion
             </th>
         </tr>
 
@@ -26,18 +26,18 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Editar", "CursoEdit", new { id=item.IdCurso }) %> |
-                <%: Html.ActionLink("Detalles", "CursoDetails", new { id = item.IdCurso })%> |
-                <%: Html.ActionLink("Eliminar", "CursoDelete", new { id = item.IdCurso })%>
+                <%: Html.ActionLink("Editar", "EmpleadoEdit", new { id = item.IdEmpleado })%> |
+                <%: Html.ActionLink("Detalles", "EmpleadoDetails", new { id = item.IdEmpleado })%> |
+                <%: Html.ActionLink("Eliminar", "EmpleadoDelete", new { id = item.IdEmpleado })%>
             </td>
             <td>
-                <%: item.IdCurso %>
+                <%: item.IdEmpleado%>
             </td>
             <td>
-                <%: item.Descripcion %>
+                <%: item.Nombre %>
             </td>
             <th>
-                <%: item.IdEmpleado %>
+                <%: item.Direccion %>
             </th>
         </tr>
     
@@ -46,7 +46,7 @@
     </table>
 
     <p>
-        <%: Html.ActionLink("Agregar", "CursoCreate") %>
+        <%: Html.ActionLink("Agregar", "EmpleadoCreate")%>
     </p>
     <a href="/Home/Index">Menu Principal</a>
 </body>
