@@ -14,9 +14,10 @@
     </center>
     <hr />
     <center>
-        <a href="/Tema/Index">Temas</a>
-         <a href="/Curso/Curso">Curso</a>
-         <a href="/Curso_Tema/Curso_Tema">Curso_Tema</a>  
+        <a href="/Tema/Index">Temas</a> <br/>
+         <a href="/Curso/Curso">Curso</a> <br/>
+         <a href="/Curso_Tema/Curso_Tema">Curso_Tema</a> <br/>
+         <a href="/Video/Video">Video</a> <br/>
     </center>
 </body>
 </html>
