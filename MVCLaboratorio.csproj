@@ -94,6 +94,9 @@
     <Content Include="Views\Curso_Tema\Curso_TemaDelete.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaDetails.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaEdit.aspx" />
+    <Content Include="Views\Empleado\Empleado.aspx" />
+    <Content Include="Views\Empleado\EmpleadoDelete.aspx" />
+    <Content Include="Views\Empleado\EmpleadoDetails.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Tema\Create.aspx" />
     <Content Include="Views\Tema\Delete.aspx" />
