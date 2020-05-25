@@ -15,8 +15,12 @@
     <hr />
     <center>
         <a href="/Tema/Index">Temas</a>
+        <br />
          <a href="/Curso/Curso">Curso</a>
-         <a href="/Curso_Tema/Curso_Tema">Curso_Tema</a>  
+         <br />
+         <a href="/Curso_Tema/Curso_Tema">Curso_Tema</a>
+         <br />
+         <a href="/Empleado/empleado">Empleado</a>   
     </center>
 </body>
 </html>

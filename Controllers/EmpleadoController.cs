@@ -37,6 +37,7 @@ namespace MVCLaboratorio.Controllers
             }
             return View(lstEmpleado);
         }
+       /*
         //Metodo para Borrar Empleado
         public ActionResult EmpleadoDelete(int id)
         {
@@ -52,7 +53,7 @@ namespace MVCLaboratorio.Controllers
 
             if (dtEmpleado.Rows.Count > 0) //si lo encontro
             {
-                datosEmpleado.IdEmpleado = Convert.ToInt32(item["IdEmpleado"].ToString());
+                datosEmpleado.IdEmpleado = int.Parse(item["IdEmpleado"].ToString());
                 datosEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
                 datosEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
 
@@ -87,7 +88,7 @@ namespace MVCLaboratorio.Controllers
 
             if (dtEmpleado.Rows.Count > 0) //lo encontro
             {
-                infoEmpleado.IdEmpleado = Convert.ToInt32(item["IdEmpleado"].ToString());
+                infoEmpleado.IdEmpleado = int.Parse(item["IdEmpleado"].ToString());
                 infoEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
                 infoEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
 
@@ -112,7 +113,7 @@ namespace MVCLaboratorio.Controllers
 
             if (dtEmpleado.Rows.Count > 0) //lo encontro
             {
-                infoEmpleado.IdEmpleado = Convert.ToInt32(item["IdEmpleado"].ToString());
+                infoEmpleado.IdEmpleado = int.Parse(item["IdEmpleado"].ToString());
                 infoEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
                 infoEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
 
@@ -137,7 +138,7 @@ namespace MVCLaboratorio.Controllers
             parametros.Add(new SqlParameter("@Direccion", Direccion));
             BaseHelper.ejecutarSentencia("spEmpleadoInsertar", CommandType.StoredProcedure, parametros);
             return RedirectToAction("Empleado");
-        }
+        } */
 
     }
 }

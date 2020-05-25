@@ -14,7 +14,7 @@ namespace MVCLaboratorio.Models
 
     public class Empleado
     {
-        public int IdEmpelado { get; set; }
+        public int IdEmpleado { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
     }
