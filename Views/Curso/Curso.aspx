@@ -46,7 +46,7 @@
     </table>
 
     <p>
-        <%: Html.ActionLink("Agregar", "Create") %>
+        <%: Html.ActionLink("Agregar", "CursoCreate") %>
     </p>
     <a href="/Home/Index">Menu Principal</a>
 </body>
