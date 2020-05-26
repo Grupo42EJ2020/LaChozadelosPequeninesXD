@@ -5,11 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Delete</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h3>Are you sure you want to delete this?</h3>
+    <center>
+    <h3>¿Deseas eliminar el Tema existente?</h3>
+    </center> 
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Datos</legend>
         
         <div class="display-label">IdTema</div>
         <div class="display-field"><%: Model.IdTema %></div>
@@ -18,12 +21,15 @@
         <div class="display-field"><%: Model.Nombre %></div>
         
     </fieldset>
+
+    <center>
     <% using (Html.BeginForm()) { %>
         <p>
-		    <input type="submit" value="Delete" /> |
-		    <%: Html.ActionLink("Back to List", "Index") %>
+		    <input type="submit" value="Eliminar" /> |
+		    <%: Html.ActionLink("Cancelar", "Index") %>
         </p>
     <% } %>
+    </center>
 
 </body>
 </html>

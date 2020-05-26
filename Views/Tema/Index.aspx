@@ -5,16 +5,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Temas</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <center>
+        <h2>
+            Temas registrados
+        </h2>
+            <p>
+        <%: Html.ActionLink("Agregar nuevo", "Create") %>
+    </p>
+        <a href="/Home/Index">Menu Principal</a>
+        </center>
+    <hr />
+
     <table>
         <tr>
-            <th></th>
             <th>
-                IdTema
+                <center>
+                    IdTema
+                </center>
             </th>
             <th>
-                Nombre
+                <center> 
+                    Nombre
+                </center>
+            </th>
+            <th>
+                <center>
+                    Opciones
+                </center>
             </th>
         </tr>
 
@@ -22,26 +42,27 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Editar", "Edit", new { id=item.IdTema }) %> |
-                <%: Html.ActionLink("Detalles", "Details", new { id = item.IdTema })%> |
-                <%: Html.ActionLink("Eliminar", "Delete", new { id = item.IdTema })%>
+                <center>
+                    <%: item.IdTema %>
+                </center>
             </td>
             <td>
-                <%: item.IdTema %>
+                <center>
+                    <%: item.Nombre %>
+                </center>
             </td>
             <td>
-                <%: item.Nombre %>
+                <center>
+                    <%: Html.ActionLink("Editar", "Edit", new { id=item.IdTema }) %> |
+                    <%: Html.ActionLink("Detalles", "Details", new { id = item.IdTema })%> |
+                    <%: Html.ActionLink("Eliminar", "Delete", new { id = item.IdTema })%>
+                </center>
             </td>
         </tr>
     
     <% } %>
-
     </table>
 
-    <p>
-        <%: Html.ActionLink("Agregar", "Create") %>
-    </p>
-    <a href="/Home/Index">Menu Principal</a>
 </body>
 </html>
 

@@ -5,13 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Edit</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
-        
+    <center>
+    <h3>
+        Actualizar datos del Tema existente
+    </h3>
+    </center>
+
         <fieldset>
-            <legend>Fields</legend>
+            <legend>Datos</legend>
 
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Nombre) %>
@@ -22,15 +28,17 @@
             </div>
             
             <p>
-                <input type="submit" value="Save" />
+                <input type="submit" value="Guardar" />
             </p>
         </fieldset>
 
     <% } %>
 
+    <center>
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink("Cancelar", "Index") %>
     </div>
+    </center>
 
 </body>
 </html>
