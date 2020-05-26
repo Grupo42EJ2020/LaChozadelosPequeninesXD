@@ -14,20 +14,21 @@
     </center>
     <hr />
     <center>
-<<<<<<< HEAD
+
         <a href="/Tema/Index">Temas</a> <br/>
-         <a href="/Curso/Curso">Curso</a> <br/>
-         <a href="/Curso_Tema/Curso_Tema">Curso_Tema</a> <br/>
+         <br/>
+        
          <a href="/Video/Video">Video</a> <br/>
-=======
-        <a href="/Tema/Index">Temas</a>
+        
         <br />
-         <a href="/Curso/Curso">Curso</a>
+         <a href="/Curso/Curso">Curso</a> <br/>
          <br />
-         <a href="/Curso_Tema/Curso_Tema">Curso_Tema</a>
+
+         <a href="/Curso_Tema/Curso_Tema">Curso_Tema</a> <br/>
          <br />
-         <a href="/Empleado/empleado">Empleado</a>   
->>>>>>> 0edd219029b5dcc2631a62d9311f3cfa092764d1
+
+         <a href="/Empleado/Empleado">Empleado</a>   
+
     </center>
 </body>
 </html>

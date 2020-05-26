@@ -76,7 +76,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ICurso.cs" />
     <Compile Include="Models\ITema.cs" />
+    <Compile Include="Models\RepositorioCurso.cs" />
     <Compile Include="Models\RepositorioTema.cs" />
     <Compile Include="Models\Modelos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,14 +101,11 @@
     <Content Include="Views\Empleado\EmpleadoDetails.aspx" />
     <Content Include="Views\Empleado\EmpleadoEdit.aspx" />
     <Content Include="Views\Home\Index.aspx" />
-<<<<<<< HEAD
     <Content Include="Views\Shared\Error.aspx" />
-=======
     <Content Include="Views\Tema\Create.aspx" />
     <Content Include="Views\Tema\Delete.aspx" />
     <Content Include="Views\Tema\Details.aspx" />
     <Content Include="Views\Tema\Edit.aspx" />
->>>>>>> 0edd219029b5dcc2631a62d9311f3cfa092764d1
     <Content Include="Views\Tema\Index.aspx" />
     <Content Include="Views\Video\Video.aspx" />
     <Content Include="Web.config">
