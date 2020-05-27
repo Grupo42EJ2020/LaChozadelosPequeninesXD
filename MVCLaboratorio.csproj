@@ -93,6 +93,7 @@
     <Content Include="Views\Curso\CursoDetails.aspx" />
     <Content Include="Views\Curso\CursoEdit.aspx" />
     <Content Include="Views\Curso_Tema\Curso_Tema.aspx" />
+    <Content Include="Views\Curso_Tema\Curso_TemaCreate.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaDelete.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaDetails.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaEdit.aspx" />

@@ -82,7 +82,7 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Curso_TemaDetails(int id)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCurso", id));
+            parametros.Add(new SqlParameter("@IdCT", id));
             DataTable dtCurso_Tema = BaseHelper.ejecutarConsulta("SP_CURSO_TEMA_CONSULTARXID", CommandType.StoredProcedure, parametros);
 
             Curso_Tema infoCurso_Tema = new Curso_Tema();
@@ -101,11 +101,10 @@ namespace MVCLaboratorio.Controllers
                 return View("Error");
             }
         }
-
+        //EDITAR-----------------------------------------------------------------------------
         public ActionResult Curso_TemaEdit(int id)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
-
             parametros.Add(new SqlParameter("@IdCT", id));
             DataTable dtCurso_Tema = BaseHelper.ejecutarConsulta("SP_CURSO_TEMA_CONSULTARXID", CommandType.StoredProcedure, parametros);
 
@@ -136,7 +135,25 @@ namespace MVCLaboratorio.Controllers
             parametros.Add(new SqlParameter("@IdTema", datosCurso_Tema.IdTema));
 
 
-            BaseHelper.ejecutarConsulta("sp_Curso_Actualizar", CommandType.StoredProcedure, parametros);
+            BaseHelper.ejecutarConsulta("SP_CURSO_TEMA_ACTUALIZAR", CommandType.StoredProcedure, parametros);
+
+            return RedirectToAction("Curso_Tema");
+        }
+        //Metodo para CREAR registro en la tabla------------------------------------------------------------------------------
+        public ActionResult Curso_TemaCreate()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Curso_TemaCreate( Curso_Tema datosCurso_Tema)
+        {
+            //Hacer el registro para agregar nueva Empresa
+            List<SqlParameter> parametros = new List<SqlParameter>();
+                        parametros.Add(new SqlParameter("@IdCurso", datosCurso_Tema.IdCurso));
+            parametros.Add(new SqlParameter("@IdTema", datosCurso_Tema.IdTema));
+
+            BaseHelper.ejecutarSentencia("SP_CURSO_TEMA_INSERT", CommandType.StoredProcedure, parametros);
 
             return RedirectToAction("Curso_Tema");
         }
