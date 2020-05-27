@@ -53,19 +53,32 @@ namespace MVCLaboratorio.Models
             }
         }
 
-        void ITema.insertarTema(Tema datosTema)
+        public void insertarTema(Tema datosTema)
         {
-            throw new NotImplementedException();
+            //Hacer el registro para agregar nueva Empresa
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@nombre", datosTema.Nombre));
+
+            BaseHelper.ejecutarSentencia("sp_Tema_Insertar", CommandType.StoredProcedure, parametros);
         }
 
-        void ITema.eliminarTema(int IdTema)
+        public void eliminarTema(int IdTema)
         {
-            throw new NotImplementedException();
+            //Realizar el delete del registro
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdTema", IdTema));
+
+            BaseHelper.ejecutarSentencia("sp_Tema_Eliminar", CommandType.StoredProcedure, parametros);
         }
 
-        void ITema.actualizarTema(Tema datosTema)
+        public void actualizarTema(Tema datosTema)
         {
-            throw new NotImplementedException();
+            //relizar el update 
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdTema", datosTema.IdTema));
+            parametros.Add(new SqlParameter("@Nombre", datosTema.Nombre));
+
+            BaseHelper.ejecutarConsulta("sp_Tema_Actualizar", CommandType.StoredProcedure, parametros);
         }
     }
 }
