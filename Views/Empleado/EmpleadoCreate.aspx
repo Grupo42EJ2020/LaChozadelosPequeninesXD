@@ -8,10 +8,16 @@
 </head>
 <body>
     <h1>
-      
+
+    <form method="post">
+
+    <%--<label for= "IdCurso">IdCurso</label>
+    <input type= "text" id="IdCurso" name= "IdCurso"/> --%>
+
+    
     <label for= "Nombre">Nombre</label>
     <input type= "text" id="Nombre" name= "Nombre"/>
-    <br />
+
 
     <label for= "Direccion">Direccion</label>
     <input type= "text"  id="Direccion" name= "Direccion"/>
@@ -22,7 +28,7 @@
      <% using (Html.BeginForm()) { %>
         <p>
             
-		    <input type= "submit" name = "grabar" Value= "Registrar Empleado"/>
+		    <input type= "submit" name = "grabar" Value= "registrar empleado"/>
 		    <%: Html.ActionLink("Regresa a la lista anterior", "Empleado") %>
         </p>
     <% } %>

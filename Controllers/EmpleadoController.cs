@@ -116,11 +116,12 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult EmpleadoCreate(string Nombre, string Direccion)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
+            List<SqlParameter> parametros = new List<SqlParameter> ();
             parametros.Add(new SqlParameter("@Nombre", Nombre));
             parametros.Add(new SqlParameter("@Direccion", Direccion));
             BaseHelper.ejecutarSentencia("spEmpleadoInsertar", CommandType.StoredProcedure, parametros);
             return RedirectToAction("Empleado");
+ 
         }
     }
 }
