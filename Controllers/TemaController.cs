@@ -39,12 +39,7 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection datos)
         {
-            //Realizar el delete del registro
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdTema", id));
-
-            BaseHelper.ejecutarSentencia("sp_Tema_Eliminar", CommandType.StoredProcedure, parametros);
-
+            repoTema.eliminarTema(id);
             return RedirectToAction("Index");
         }
 
@@ -57,51 +52,22 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult Create(Tema datosTema)
         {
-            //Hacer el registro para agregar nueva Empresa
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@nombre", datosTema.Nombre));
-
-            BaseHelper.ejecutarSentencia("sp_Tema_Insertar", CommandType.StoredProcedure, parametros);
-
+            repoTema.insertarTema(datosTema);
             return RedirectToAction("Index");
         }
 
         //Metodo para EDITAR registro de la tabla
         public ActionResult Edit(int id)
         {
-            //Obtener la info del registro
-            List<SqlParameter> parametros = new List<SqlParameter>();
-
-            parametros.Add(new SqlParameter("@IdTema", id));
-            DataTable dtTema = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarPorID", CommandType.StoredProcedure, parametros);
-
-            Tema datosTema = new Tema();
-            if (dtTema.Rows.Count > 0) //si lo encontro
-            {
-                datosTema.IdTema = int.Parse(dtTema.Rows[0]["IdTema"].ToString());
-                datosTema.Nombre = dtTema.Rows[0]["Nombre"].ToString();
-
-                return View(datosTema);
-            }
-            else //no lo encontro
-            {
-                return View("Error");
-            }
+            return View(repoTema.obtenerTema(id));
         }
 
         [HttpPost]
         public ActionResult Edit(int id, Tema datosTema)
         {
-            //relizar el update 
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdTema", id));
-            parametros.Add(new SqlParameter("@Nombre", datosTema.Nombre));
-
-            BaseHelper.ejecutarConsulta("sp_Tema_Actualizar", CommandType.StoredProcedure, parametros);
-
+            datosTema.IdTema = id;
+            repoTema.actualizarTema(datosTema);
             return RedirectToAction("Index");
         }
-
-
     }
 }
