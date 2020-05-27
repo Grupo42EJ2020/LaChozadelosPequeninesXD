@@ -13,8 +13,7 @@ namespace MVCLaboratorio.Controllers
 {
     public class EmpleadoController : Controller
     {
-        //
-        // GET: /Empleado/
+        RepositorioEmpleado repoEmpleado = new RepositorioEmpleado();
 
         public ActionResult Index()
         {
@@ -22,106 +21,45 @@ namespace MVCLaboratorio.Controllers
         }
         public ActionResult Empleado()
         {
-
-            DataTable dtEmpleado;
-            dtEmpleado = BaseHelper.ejecutarConsulta("spEmpleadoConsultarTodo", CommandType.StoredProcedure);
-            List<Empleado> lstEmpleado = new List<Empleado>();
-
-            foreach (DataRow item in dtEmpleado.Rows)
-            {
-                Empleado EmpleadoAux = new Empleado();
-                EmpleadoAux.IdEmpleado = Convert.ToInt32(item["IdEmpleado"].ToString()); //int.Parse(item["IdEmpleado"].ToString());
-                EmpleadoAux.Nombre = item["Nombre"].ToString();
-                EmpleadoAux.Direccion = item["Direccion"].ToString();
-
-                lstEmpleado.Add(EmpleadoAux);
-            }
-            return View(lstEmpleado);
+            
+            return View(repoEmpleado.obtenerEmpleado());
         }
         //Metodo para borrar videos
         public ActionResult EmpleadoDelete(int id) 
         {
-            //obtener datos del empleado
-            DataTable dtEmpleado;
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("IdEmpleado", id));
-
-            dtEmpleado = BaseHelper.ejecutarConsulta("spEmpleadoConsultarPorID", CommandType.StoredProcedure, parametros);
-            //Convertir el dtEmpleado a un objeto Empleado
-            Empleado datosEmpleado = new Empleado();
-            if (dtEmpleado.Rows.Count > 0)
-            {
-                datosEmpleado.IdEmpleado = int.Parse(dtEmpleado.Rows[0]["IdEmpleado"].ToString());
-                datosEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
-                datosEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
-                return View(datosEmpleado);
-            }
-            else
-            {
-                return View("Error");
-            }
+            return View(repoEmpleado.obtenerEmpleado(id));
         }
         [HttpPost]
         public ActionResult EmpleadoDelete(int id, FormCollection datos)
         {
             //REalizar delete del registro
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdEmpleado", id));
-
-            BaseHelper.ejecutarSentencia("spEmpleadoEliminar", CommandType.StoredProcedure, parametros);
+            repoEmpleado.eliminarEmpleado(id);
             return RedirectToAction("Empleado");
         }
         public ActionResult EmpleadoDetails(int id)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("IdEmpleado", id));
-            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("spEmpleadoConsultarPorID", CommandType.StoredProcedure, parametros);
-
-            Empleado infoEmpleado = new Empleado();
-            if (dtEmpleado.Rows.Count > 0)
-            {
-                infoEmpleado.IdEmpleado = int.Parse(dtEmpleado.Rows[0]["IdEmpleado"].ToString());
-                infoEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
-                infoEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
-                return View(infoEmpleado);
-            }
-            else
-            {
-                return View("Error");
-            }
+            return View(repoEmpleado.obtenerEmpleado(id));
         }
         public ActionResult EmpleadoEdit(int id)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("IdEmpleado", id));
-            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("spEmpleadoConsultarPorID", CommandType.StoredProcedure, parametros);
-
-            Empleado infoEmpleado = new Empleado();
-            if (dtEmpleado.Rows.Count > 0)
-            {
-                infoEmpleado.IdEmpleado = int.Parse(dtEmpleado.Rows[0]["IdEmpleado"].ToString());
-                infoEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
-                infoEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
-                return View(infoEmpleado);
-            }
-            else
-            {
-                return View("Error");
-            }
+            return View(repoEmpleado.obtenerEmpleado(id));
+        }
+        [HttpPost]
+        public ActionResult EmpleadoEdit(int id, Empleado datosEmpleado)
+        {
+            datosEmpleado.IdEmpleado = id;
+            repoEmpleado.actualizarEmpleado(datosEmpleado);
+            return RedirectToAction("Empleado");
         }
         public ActionResult EmpleadoCreate()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult EmpleadoCreate(string Nombre, string Direccion)
+        public ActionResult EmpleadoCreate(Empleado datosEmpleado)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@Nombre", Nombre));
-            parametros.Add(new SqlParameter("@Direccion", Direccion));
-            BaseHelper.ejecutarSentencia("spEmpleadoInsertar", CommandType.StoredProcedure, parametros);
+            repoEmpleado.insertarEmpleado(datosEmpleado);
             return RedirectToAction("Empleado");
-
         }
     }
 }
