@@ -33,7 +33,7 @@
                 <%: Html.ActionLink("Borrar", "VideoDelete", new { id=item.IdVideo })%>
             </td>
             <td>
-                <%: item.IdVideo %>
+                <%: item.IdVideo %><link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
             </td>
             <td>
                 <%: item.Nombre %>
@@ -51,7 +51,7 @@
     </table>
 
     <p>
-        <%: Html.ActionLink("Crear Nuevo", "Create") %>
+        <%: Html.ActionLink("Crear Nuevo", "VideoCreate") %>
     </p>
 
 </body>
