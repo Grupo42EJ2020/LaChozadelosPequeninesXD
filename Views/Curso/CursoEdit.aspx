@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>CursoEdit</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <% using (Html.BeginForm()) {%>

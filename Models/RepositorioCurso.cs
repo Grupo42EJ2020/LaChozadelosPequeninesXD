@@ -22,7 +22,7 @@ namespace MVCLaboratorio.Models
 
             List<Curso> lstCurso = new List<Curso>();
 
-            //convertir el DataTable a una lista de videos List<Curso>
+            //convertir el DataTable a una lista de curso List<Curso>
             foreach (DataRow item in dtCurso.Rows)
             {
                 Curso CursoAux = new Curso();

@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>CursoDelete</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <h3>Estas seguro de borrar la siguiente información?</h3>
