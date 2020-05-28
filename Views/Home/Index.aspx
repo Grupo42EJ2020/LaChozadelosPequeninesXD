@@ -5,12 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Pia Desarrollo de Software</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+ <font color="#4169E1">
     <center>
         <h1>
-            PIA 👍
+            "Producto Integrador de Aprendizaje"
         </h1>
+        <h2>Desarrollo de Software
+        </h2>
+        <h3>Equipo: LaChozadelosPequeninesXD 👍
+        </h3>
     </center>
     <hr />
     <center>

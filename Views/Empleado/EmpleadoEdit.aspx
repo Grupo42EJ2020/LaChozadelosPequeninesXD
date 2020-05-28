@@ -5,13 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>EmpleadoEdit</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
         
         <fieldset>
-            <legend>Fields</legend>
+            <legend>Datos</legend>
             
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.IdEmpleado)%>
