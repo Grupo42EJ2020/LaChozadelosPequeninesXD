@@ -37,6 +37,10 @@
 
          <a href="/Empleado/Empleado">Empleado</a>   
 
+         <Center>
+        <img src="../../Content/Imagen/CURSOS-720x340.jpg" />
+        </center>
+
     </center>
     <br />
     <br />
