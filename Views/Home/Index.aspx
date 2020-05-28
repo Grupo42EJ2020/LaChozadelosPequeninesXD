@@ -8,7 +8,9 @@
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
- <font color="#4169E1">
+<body bgcolor="C0C0C0" >
+</body>
+ <font color="#000000">
     <center>
         <h1>
             "Producto Integrador de Aprendizaje"
@@ -36,5 +38,12 @@
          <a href="/Empleado/Empleado">Empleado</a>   
 
     </center>
+    <br />
+    <br />
+    <br />
+     <br />
+    <a href="https://www.uanl.mx/ENLINEA/">Visita la pagina de SIASE</a>
+     <br />
+    <a href="https://github.com/">Visita la pagina de Github</a>
 </body>
 </html>
